@@ -2,7 +2,7 @@
 function Text(props) {
     return (
         <div>
-            <h3>2
+            <h3>
                 {
                     props.name
                 }

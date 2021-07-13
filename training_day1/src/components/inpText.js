@@ -1,10 +1,8 @@
 import { useState } from "react";
-import Input from "./Input";
 
 function InputText(props) {
-    const [value, setValue] = useState(props.value);
+    const [value,setValue] = useState(props.value);
     function handleChange(e) {
-        console.log("clicked");
         setValue(e.target.value);
     }
     return (
@@ -14,5 +12,4 @@ function InputText(props) {
         </div>
     );
 }
-
 export default InputText;

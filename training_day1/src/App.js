@@ -1,27 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
 import HelloWorld from './components/HelloWorld';
 import Text from './components/Text';
 import ButtonComponent from './components/Button';
 import InputText from './components/inpText';
-import Input from './components/Input';
+import './App.css';
 
 function App() {
   
   return (
     <div className="App">
-      <h1 className="assign1">Assignemnt 1:</h1>
-      <hr/>
-      <HelloWorld />
-      <hr />
-      <Text name=" Day1 react training" />
-      <hr />
-      <ButtonComponent />
-      <hr />
-      
-      <InputText value="" placeholder="Enter your email" />
-    </div>
+      <h1 className="pageHeading">Assignemnt 1:</h1>
+      <div>
+        <HelloWorld />
+      </div>      
+      <div>
+        <Text name="Day1 react training" />
+      </div>
+      <div>
+        <ButtonComponent />
+      </div>
+      <div>
+        <InputText value="" placeholder="Enter your email" />
+      </div>    
+      </div>
   );
 }
-
 export default App;
