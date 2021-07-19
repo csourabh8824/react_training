@@ -13,6 +13,7 @@ function ButtonComponent() {
             
             <input className="m-2" type="text" id="name" name="name" value={name} onChange={(e)=>{setName(e.target.value)}}></input>
             <button className="btn btn-primary" onClick={getValue} >Click Me</button>
+            <h4>{name}</h4>
         </div>
     );
 }

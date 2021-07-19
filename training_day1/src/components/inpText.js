@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 function InputText(props) {
-    const [value,setValue] = useState(props.value);
+    const [value, setValue] = useState(props.value);
+    
     function handleChange(e) {
         setValue(e.target.value);
+        console.log(e.target.value);
     }
     return (
         <div>

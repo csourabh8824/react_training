@@ -4,6 +4,7 @@ import ButtonComponent from './components/Button';
 import InputText from './components/inpText';
 import './App.css';
 
+
 function App() {
   
   return (
@@ -19,7 +20,7 @@ function App() {
         <ButtonComponent />
       </div>
       <div>
-        <InputText value="" placeholder="Enter your email" />
+      <InputText value="sourabh" placeholder="Enter your email" />
       </div>    
       </div>
   );
