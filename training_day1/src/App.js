@@ -20,7 +20,7 @@ function App() {
         <ButtonComponent />
       </div>
       <div>
-      <InputText value="sourabh" placeholder="Enter your email" />
+        <InputText value="sourabh" placeholder="Enter your email" />
       </div>    
       </div>
   );
