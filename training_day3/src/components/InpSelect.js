@@ -5,18 +5,18 @@ const inpSelect = {
     marginLeft:"10px"
 }
 
-function InputSelect() {
+function InputSelect(props) {
     return (
         <Form>
             <Form.Group controlId="exampleForm.SelectCustom">
                 
                 <Form.Control style={inpSelect} as="select" custom>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    </Form.Control>
+                {
+                    props.optionValues.map((item) => 
+                        <option>{item}</option>
+                )
+                }
+                </Form.Control>
             </Form.Group>
         </Form>
     )

@@ -8,15 +8,16 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
+  const arr = [1,2,3,4,5]
   return (
     <div className="App">
       <div className="container">
         <h3 className="m-2">Displaying input components</h3>
         <div className="inputTags">
-          <InputText />
+          <InputText placeholder="Enter your name"/>
           <InputFile />
           <Date />
-          <InputSelect />
+          <InputSelect optionValues={arr}/>
           <Radio /> 
           <Range />
         </div>  
