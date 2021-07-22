@@ -4,6 +4,7 @@ import Date from './components/Date';
 import InputSelect from './components/InpSelect';
 import Radio from './components/Radio';
 import Range from './components/Range';
+import { Form } from "react-bootstrap";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -14,12 +15,14 @@ function App() {
       <div className="container">
         <h3 className="m-2">Displaying input components</h3>
         <div className="inputTags">
-          <InputText placeholder="Enter your name"/>
-          <InputFile />
-          <Date />
-          <InputSelect optionValues={arr}/>
-          <Radio /> 
-          <Range />
+          <Form>
+            <InputText placeholder="Enter your name"/>
+            <InputFile />
+            <Date />
+            <InputSelect optionValues={arr}/>
+            <Radio /> 
+            <Range />
+          </Form>
         </div>  
       </div>
     </div>

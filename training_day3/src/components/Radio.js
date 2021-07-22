@@ -1,8 +1,7 @@
 import { Form } from "react-bootstrap";
 
 function Radio() {
-    return (
-        <Form>
+    return (    
             <div style={{marginTop:"20px"}}>
                 {['radio'].map((type) => (
                     <div key={`inline-${type}`} className="mb-3" style={{float:"left",marginLeft:"10px"}}>
@@ -17,8 +16,7 @@ function Radio() {
                     />
                     </div>                
                 ))}
-            </div>
-        </Form>
+            </div>    
     )
 }
 export default Radio;
