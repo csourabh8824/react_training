@@ -10,7 +10,7 @@ const dateInput = {
 function InputDate() {
     return (
         <Form>            
-            <input style={dateInput} type="date" id="fname" name="firstname" placeholder="Your name.." />       
+            <input style={dateInput} type="date" placeholder="Your name.." />       
         </Form>
     )
 }
