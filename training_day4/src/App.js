@@ -19,14 +19,34 @@ class App extends React.Component{
       dobError: "",
       passwordError: "",
       confirmPasswordError: "",
-      genderError:""
+      genderError: "",
+      fileError:""
+      
     }
   }
+  
+  dateMaxValue() {
+    console.log("heres")
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
 
+    today = yyyy + '/' + mm + '/' + dd;
+  }
+  
   valid() {
     
     if (this.state.name.length < 1 ) {
       this.setState({ nameError: "Name should not be blank" })
+      return false;
+    }
+    if (!this.state.email.includes("@")) {
+      this.setState({ emailError: "Invalid Email" })
+      return false;
+    }
+    if (this.state.dob==="") {
+      this.setState({ dobError: "Please enter date" })
       return false;
     }
     if (this.state.password.length<5) {
@@ -37,10 +57,10 @@ class App extends React.Component{
       this.setState({ confirmPasswordError: "Password doesn't match" })
       return false;
     }
-    if (!this.state.email.includes("@")) {
-      this.setState({ emailError: "Invalid Email" })
+    if (this.state.profilePic.length===0) {
+      this.setState({ fileError: "file must not be blank" })
       return false;
-    }    
+    }   
     return true;
   }
 
@@ -59,13 +79,13 @@ class App extends React.Component{
         <form onSubmit={(e)=>e.preventDefault()}>
           Name: <input type="text" placeholder="Enter Name" onChange={(e) => { this.setState({ name: e.target.value }) }} /><p style={{color:"red"}}>{ this.state.nameError }</p><br/>
           Email: <input type="email" placeholder="Enter Email" onChange={(e) => { this.setState({ email: e.target.value }) }} /><p style={{color:"red"}}>{ this.state.emailError }</p><br/><br />
-          Dob: <input style={{ marginRight: "95px" }} type="date" placeholder="Enter date" onChange={(e) => { this.setState({ dob: e.target.value }) }} /><br/><br />
+          Dob: <input style={{ marginRight: "95px" }} type="date" placeholder="Enter date" onChange={(e) => { this.setState({ dob: e.target.value }) }} max="2021-07-23" /><p style={{color:"red"}}>{ this.state.dobError }</p><br/><br />
           <label for="cars">Choose an education level:</label>
           <select name="education" id="education">
             <option value="10th">10th</option>
             <option value="12th">12th</option>
             <option value="B.E">B.E</option>
-        
+
           </select><br /><br />
           Password: <input type="password" placeholder="Enter Password" onChange={(e) => { this.setState({ password: e.target.value }) }} /><p style={{color:"red"}}>{ this.state.passwordError }</p><br /><br />
           Confirm Password: <input type="password" placeholder="Enter Password" onChange={(e) => { this.setState({ confirmPassword: e.target.value }) }} /><p style={{color:"red"}}>{ this.state.confirmPasswordError }</p><br/><br />
@@ -77,8 +97,8 @@ class App extends React.Component{
           </p>
           <p style={{ marginRight: "-55px" }} >Profile Pic: 
             <input  type="file" onChange={(e) => { this.setState({ profilePic: e.target.value }) }}/>
-          </p><br />
-          <button onClick={()=>{this.submit()}} className="btn btn-primary">Submit</button>
+          </p><br /><p style={{color:"red"}}>{ this.state.fileError }</p>
+          <button onClick={() => { this.submit() }} className="btn btn-primary">Submit</button>
         </form>
       </div>
     );
