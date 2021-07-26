@@ -33,6 +33,7 @@ class App extends React.Component{
     var yyyy = today.getFullYear();
 
     today = yyyy + '/' + mm + '/' + dd;
+    return today;
   }
   
   valid() {
@@ -79,7 +80,7 @@ class App extends React.Component{
         <form onSubmit={(e)=>e.preventDefault()}>
           Name: <input type="text" placeholder="Enter Name" onChange={(e) => { this.setState({ name: e.target.value }) }} /><p style={{color:"red"}}>{ this.state.nameError }</p><br/>
           Email: <input type="email" placeholder="Enter Email" onChange={(e) => { this.setState({ email: e.target.value }) }} /><p style={{color:"red"}}>{ this.state.emailError }</p><br/><br />
-          Dob: <input style={{ marginRight: "95px" }} type="date" placeholder="Enter date" onChange={(e) => { this.setState({ dob: e.target.value }) }} max="2021-07-23" /><p style={{color:"red"}}>{ this.state.dobError }</p><br/><br />
+          Dob: <input style={{ marginRight: "95px" }} type="date" placeholder="Enter date" onChange={(e) => { this.setState({ dob: e.target.value }) }} max="2021-07-26" /><p style={{color:"red"}}>{ this.state.dobError }</p><br/><br />
           <label for="cars">Choose an education level:</label>
           <select name="education" id="education">
             <option value="10th">10th</option>
